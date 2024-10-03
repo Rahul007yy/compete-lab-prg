@@ -1,0 +1,22 @@
+SET SERVEROUTPUT ON;
+DECLARE
+    a NUMBER;
+    b NUMBER;
+    c NUMBER;
+    
+    PROCEDURE findmax(x IN NUMBER, y IN NUMBER, z OUT NUMBER) IS
+    BEGIN
+        IF x > y THEN
+            z := x;  -- Use semicolon here
+        ELSE
+            z := y;
+        END IF;
+    END;
+
+BEGIN
+    a := 75;
+    b := 45;
+    findmax(a, b, c);
+    DBMS_OUTPUT.PUT_LINE('Maximum of (75, 45): ' || c);
+END;
+/
